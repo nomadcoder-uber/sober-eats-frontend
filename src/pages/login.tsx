@@ -1,6 +1,7 @@
 import React from "react";
 
 import { useForm } from "react-hook-form";
+import { FormError } from "../components/form-error";
 
 interface ILoginForm {
   email?: string;
@@ -27,9 +28,7 @@ export const Login = () => {
                 className="input"
               />
                {errors.email?.message && (
-                <span className="font-medium text-red-500">
-                    {errors.email?.message}
-                </span>
+                  <FormError errorMessage={errors.email?.message}/>
              )}
               <input
                 ref={register({ required: "Password is required", minLength: 10 })}
@@ -40,9 +39,7 @@ export const Login = () => {
                 className="input"
               />
                 {errors.password?.message && (
-                    <span className="font-medium text-red-500">
-                    {errors.password?.message}
-                  </span>
+                  <FormError errorMessage={errors.password?.message}/>
                 )}
                 {errors.password?.type === "minLength" && (
                     <span className="font-medium text-red-500">

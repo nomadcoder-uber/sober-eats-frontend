@@ -11,7 +11,7 @@ ReactDOM.render(
   <React.StrictMode>
     <ApolloProvider client={client}>
       <HelmetProvider>
-    <App />
+        <App />
     </HelmetProvider>
     </ApolloProvider>
   </React.StrictMode>,
